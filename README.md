@@ -17,9 +17,9 @@ interest in the program on their attendance at sessions.
 
 ## Code for Generating Report
 
-The following documents are in the “code” folder within the
-directory: 1. The R script titled “01makefigure.R” creates the report’s
-figure.
+The following documents are in the “code” folder within the directory:
+
+1.  The R script titled “01makefigure.R” creates the report’s figure.
 
 2.  The R script titled “02maketable.R” runs two logistic regression
     models. The first analyzes the association between the type of job
@@ -31,9 +31,10 @@ figure.
 3.  The R script title “03render_report.R” renders the final R Markdown
     report.
 
-The following documents are in the “files” folder within the
-directory: 1. The file titled “DATA550_final_project_pt3.Rmd” is the
-report’s R markdown file.
+The following documents are in the “files” folder within the directory:
+
+1.  The file titled “DATA550_final_project_pt3.Rmd” is the report’s R
+    markdown file.
 
 ## Generating the Report
 
