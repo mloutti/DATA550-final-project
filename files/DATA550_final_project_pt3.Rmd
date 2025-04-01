@@ -1,0 +1,50 @@
+---
+title: "DATA 550 Final Project"
+author: "Megan Louttit"
+date: "2025-03-31"
+output: html_document
+---
+
+```{r, set-chunk-opts, echo = FALSE}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE
+)
+```
+
+```{r, load-data}
+here::i_am("files/DATA550_final_project_pt3.Rmd")
+data_for_table <- readRDS(
+  file = here::here("csv-datasets/simulated_data_for_table.RDS")
+)
+
+data_for_figure <- read.csv(
+  file = here::here("csv-datasets/community_attendance_DATA550.csv")
+)
+```
+
+# Introduction
+The data for this project was collected from `r nrow(data_for_table)` fathers in Mwanza, Tanzania from June - November, 2024. All fathers were involved in an early childhood educational program during this time period. The program ran weekly from June to November in six communities near Mwanza, with a goal of 15 meetings being completed in each community. There were about 10 fathers in each community. All fathers took a survey before and after the program was conducted to collect information on various demographic characteristics, practiced behaviors, and attitudes and beliefs about parenting, gender norms, etc. to measure the impacts of the program. Additionally, attendance of fathers was taken at every session in each community. The goal of this project is to explore the different factors, specifically type of job worked, monthly household income, and interest in the program at baseline, that affect fathers' attendance at educational sessions in Mwanza, Tanzania. To perform this analysis, two datasets were used. The first dataset contains the baseline, endline, and personal attendance data merged, and the second dataset is an overview of the attendance trends per community. Fathers' attendance at sessions was operationalized as a binary variable, with fathers who attended at least 50% of sessions counted as attending, and fathers who attended less than 50% of sessions counted as not attending. A figure will be generated to show how attendance rates changed over time in each community. Logistic regression analyses will be run to determine whether type of job worked, monthly household income, and interest in the program at baseline had a statistically significant impact on fathers' attendance at sessions.
+
+
+# Attendance Levels by Community
+
+```{r, plot_figure}
+#| fig.align = "center",
+#| out.width = "600px"
+figure <- readRDS(here::here("outputs/figure.rds"))
+print(figure)
+```
+The above figure shows the number of fathers that attended each educational session by community. There were about 10 fathers in each community. The figure shows that all communities had between 6 and 9 fathers present at the first session. Many communities experienced a decline in attendance until incentives were introduced in four out of six communities (Iponyabugali, Kabangaja, Kisundi, and Nyamwilolelwa) during week six. Many communities saw improved attendance rates in the second half of the program, including those that did not receive any incentives. However, some communities, specifically Kabangaja, still had low attendance rates despite being provided incentives.
+
+# Regression Analysis
+
+```{r, fit-primary-model}
+# Load the gt table from the RDS file
+table_loaded <- readRDS(here::here("outputs", "table.RDS"))
+
+# Print the gt table to the document
+table_loaded
+```
+Table 1 shows the results of fitting a logistic regression model of fathers' attendance by the type of job they work and their interest level in the program at baseline. The data shows that neither the type of job fathers work or their interest level in the program is statistically significantly associated with attendance at educational sessions. All job types had a p-value greater than 0.05 when compared to the job category "other", and both "neutral" and "very interested" had p-values greater than 0.05 when compared with the level "interested". Additionally, all confidence intervals for the odds ratios include 1, which further indicates that these variables did not significantly impact their ability to attend educational sessions. This suggests that all fathers face barriers when attending educational sessions that are unrelated to the type of job they work or their interest level in the program.
+

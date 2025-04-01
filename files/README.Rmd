@@ -1,0 +1,25 @@
+---
+title: "DATA 550 Final Project"
+author: "Megan Louttit"
+date: "2025-04-01"
+output: github_document
+---
+
+# DATA 550 Final Project
+
+## Project Description
+This project builds a report that analyzes attendance data collected from fathers who participated in an ECD parenting program in six communities near Mwanza, Tanzania. The project includes code for generating a figure of the attendance trends throughout the program in each community. Additionally, the code produces a table that analyzes the impacts of the type of job that fathers worked and their baseline interest in the program on their attendance at sessions.
+
+## Code for Generating Report
+The following documents are in the "code" folder within the directory:
+1. The R script titled "01makefigure.R" creates the report's figure.
+
+2. The R script titled "02maketable.R" runs two logistic regression models. The first analyzes the association between the type of job that fathers worked and their attendance at sessions, and the second analyzes the association between fathers' baseline interest in the program and their attendance at sessions. The code also creates the report's table.
+
+3. The R script title "03render_report.R" renders the final R Markdown report.
+
+The following documents are in the "files" folder within the directory:
+1. The file titled "DATA550_final_project_pt3.Rmd" is the report's R markdown file.
+
+## Generating the Report
+The Makefile includes directions on how to generate the report. Running "make DATA550_final_project_pt3.html" in the terminal window will generate the report.
