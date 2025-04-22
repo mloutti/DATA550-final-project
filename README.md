@@ -41,3 +41,9 @@ The following documents are in the “files” folder within the directory:
 The Makefile includes directions on how to generate the report. Running
 “make DATA550_final_project_pt3.html” in the terminal window will
 generate the report.
+
+## Setting up the R Package Environment
+This project uses [`renv`] to manage package dependencies. To install the 
+required packages, run "make install".
+
+
