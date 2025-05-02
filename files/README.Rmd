@@ -12,6 +12,7 @@ This project builds a report that analyzes attendance data collected from father
 
 ## Code for Generating Report
 The following documents are in the "code" folder within the directory:
+
 1. The R script titled "01makefigure.R" creates the report's figure.
 
 2. The R script titled "02maketable.R" runs two logistic regression models. The first analyzes the association between the type of job that fathers worked and their attendance at sessions, and the second analyzes the association between fathers' baseline interest in the program and their attendance at sessions. The code also creates the report's table.
@@ -19,7 +20,11 @@ The following documents are in the "code" folder within the directory:
 3. The R script title "03render_report.R" renders the final R Markdown report.
 
 The following documents are in the "files" folder within the directory:
+
 1. The file titled "DATA550_final_project_pt3.Rmd" is the report's R markdown file.
 
 ## Generating the Report
 The Makefile includes directions on how to generate the report. Running "make DATA550_final_project_pt3.html" in the terminal window will generate the report.
+
+## Setting up the R Package Environment
+This project uses [`renv`] to manage package dependencies. To install the required packages, run "make install".

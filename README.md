@@ -38,12 +38,25 @@ The following documents are in the “files” folder within the directory:
 
 ## Generating the Report
 
-The Makefile includes directions on how to generate the report. Running
-“make DATA550_final_project_pt3.html” in the terminal window will
-generate the report.
+The Makefile includes directions on how to generate the report. To compile the report locally,
+run “make DATA550_final_project_pt3.html-local” in the terminal window.
 
 ## Setting up the R Package Environment
 This project uses [`renv`] to manage package dependencies. To install the 
 required packages, run "make install".
 
+## How to Build the Docker Image
+The docker image for this project is publicly available at:
+https://hub.docker.com/repository/docker/dance4life/final_project/tags/image/sha256-8ca1d4f01df5862157aabdefe07aa52e755b4893ffcab1115731e6049216ac3e
+
+To build the Docker Image, run the "make final_project_docker" rule. This rule 
+is specified in the Makefile and builds the entire Docker Image, including downloading
+the image from the Docker Hub repository, installing necessary packages, mounting the report
+directory, and creating a directory setup in the container.
+
+## How to Run the Automated Version of the Image
+There are two different rules for running the automated version of the Docker Image
+depending on whether the image is run on a Mac OS System or a Windows System. 
+If the image is being built on a Mac OS System, run "make report_mac".
+If the image is being built on a Windows OS System, run "make report_windows".
 
